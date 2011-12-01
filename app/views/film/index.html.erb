@@ -1,0 +1,76 @@
+<head>
+	<title>AnythingSlider Video Demo</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+
+	<!-- Demo stuff -->
+	<link rel="stylesheet" href="page">
+
+	<!-- Anything Slider optional plugins, but needed so the embeded video controls will work in IE -->
+	<!-- http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject -->
+	<script src="swfobject"></script>
+
+	<!-- Anything Slider -->
+	<link rel="stylesheet" href="http://localhost:3000/assets/anythingslider.css">
+	<script src="http://localhost:3000/assets/jquery.anythingslider.js"></script>
+
+	<!-- AnythingSlider video extension; optional, but needed to control video pause/play -->
+	<script src="jquery.anythingslider.video.js"></script>
+
+	<script>
+		// DOM Ready
+		$(function(){
+			$('#slider').anythingSlider({
+				resizeContents      : true,
+				addWmodeToObject    : 'transparent',
+				navigationFormatter : function(index, panel){ // Format navigation labels with text
+					return ['Vimeo-iframe', 'Vimeo-embed', 'YouTube-iframe', 'YouTube-embed', 'HTML5 Video'][index - 1];
+				}
+			});
+		});
+	</script>
+
+	<!-- Older IE stylesheet, to reposition navigation arrows, added AFTER the theme stylesheet above -->
+	<!--[if lte IE 7]>
+	<link rel="stylesheet" href="anythingslider-ie.css" type="text/css" media="screen" />
+	<![endif]-->
+</head>
+
+<body>
+
+	<br>
+	
+	<br><br>
+
+	<!-- START AnythingSlider -->
+	<ul id="slider">
+
+		<!-- Vimeo: iframe -->
+		<li class="panel1"><iframe src="http://player.vimeo.com/video/18011143?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe></li>
+
+		<!-- Vimeo: Embeded -->
+		<li class="panel2"><object width="940" height="529"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=12280336&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=12280336&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="940" height="529"></embed></object></li>
+
+		<!-- YouTube: iframe -->
+		<li class="panel3"><iframe title="YouTube video player" width="480" height="385" src="http://www.youtube.com/embed/1gOyrAVZHi4" frameborder="0" allowfullscreen></iframe></li>
+
+		<!-- YouTube: Embedded -->
+		<li class="panel4"><object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/zSgiXGELjbc&amp;hl=en_US&amp;fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/zSgiXGELjbc&amp;hl=en_US&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object></li>
+
+		<!-- HTML5 Video -->
+		<li class="panel5">
+			<video controls preload="auto" poster="https://s3-us-west-1.amazonaws.com/bucketca/html5Video/podcast-poster.jpg">  
+	<source src="https://s3-us-west-1.amazonaws.com/bucketca/html5Video/encoded/podcast.mp4" type="video/mp4" />    // safari
+	<source src="https://s3-us-west-1.amazonaws.com/bucketca/html5Video/encoded/podcast.webm" type="video/webm" /> // firefox
+	<source src="https://s3-us-west-1.amazonaws.com/bucketca/html5Video/encoded/podcast.ogv" type="video/ogg" />	  // firefox
+	<p>Browser doesn't support video</p>
+</video>
+		</li>
+
+	</ul> <!-- END AnythingSlider -->
+
+	<br>
+	<br>
+
+</body>
