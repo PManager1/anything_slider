@@ -5,7 +5,7 @@
 
 
 	<!-- Demo stuff -->
-	<link rel="stylesheet" href="http://localhost:3000/assets/page.css">
+	<link rel="stylesheet" href="page">
 
 	<!-- Anything Slider optional plugins, but needed so the embeded video controls will work in IE -->
 	<!-- http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject -->
@@ -25,7 +25,7 @@
 				resizeContents      : true,
 				addWmodeToObject    : 'transparent',
 				navigationFormatter : function(index, panel){ // Format navigation labels with text
-					return ['Vimeo-iframe', 'Vimeo-embed', 'YouTube-iframe', 'YouTube-embed', 'HTML5 Video', 'JP Video'][index - 1];
+					return ['Vimeo-iframe', 'Vimeo-embed', 'YouTube-iframe', 'YouTube-embed', 'HTML5 Video'][index - 1];
 				}
 			});
 		});
